@@ -29,7 +29,7 @@ router.post('/api/create', (req, res) => {
     });
   } catch (error) {
     const {message} = error;
-    const status = message.search(/use/g) === 0 ? 409 : 400;
+    const status = message.match(/use/g).length > 0 ? 409 : 400;
     res.status(status).json({message});
   }
 });

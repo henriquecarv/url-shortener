@@ -2,14 +2,17 @@
 'use strict';
 
 import UrlShort from './../models/UrlShort';
-import {validateUrl} from './../utils/UrlShortHelper';
-import {createShortURLId} from '../utils/UrlShortHelper.mjs';
+import {createShortURLId, validateUrl} from './../utils/UrlShortHelper';
 import {db} from './../db/init';
 
 const urlShort = db.addCollection('urlShort');
 
 const create = ({original_url, shorthand}) => {
   validateUrl(original_url);
+
+  if (urlShort.findOne({shorthand})) {
+    throw new Error('Short url address is already in use.');
+  }
 
   const shortUrl = createShortURLId(shorthand);
 

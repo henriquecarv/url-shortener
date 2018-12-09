@@ -2,9 +2,6 @@
 
 import validUrl from 'valid-url';
 import shortid from 'shortid';
-import {db} from './../db/init';
-
-const urlShort = db.addCollection('urlShort');
 
 /**
  * Validate a url address
@@ -23,9 +20,6 @@ const validateUrl = (url) => {
  */
 const createShortURLId = (shorthand) => {
   if (!shorthand) {
-    if (urlShort.findOne({shorthand})) {
-      throw new Error('Short url address is already in use.');
-    }
     return shortid.generate();
   }
 
