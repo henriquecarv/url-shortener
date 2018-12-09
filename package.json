@@ -5,8 +5,8 @@
   "private": true,
   "main": "src/index.js",
   "scripts": {
-    "local": "nodemon -r dotenv/config .",
-    "start": "node -r dotenv/config .",
+    "local": "nodemon .",
+    "start": "node .",
     "lint": "eslint ."
   },
   "repository": {
