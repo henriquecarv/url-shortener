@@ -2,6 +2,7 @@
 
 import validUrl from 'valid-url';
 import shortid from 'shortid';
+import HTTPError from '../models/Error.mjs';
 
 /**
  * Validate a url address
@@ -9,7 +10,7 @@ import shortid from 'shortid';
  */
 const validateUrl = (url) => {
   if (!validUrl.isUri(url)) {
-    throw new Error('Provide a valid original_url');
+    throw new HTTPError('Provide a valid original_url', 400);
   }
 };
 

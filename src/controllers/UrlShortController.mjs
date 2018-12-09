@@ -2,6 +2,7 @@
 'use strict';
 
 import UrlShort from './../models/UrlShort';
+import HTTPError from './../models/Error';
 import {createShortURLId, validateUrl} from './../utils/UrlShortHelper';
 import {db} from './../db/init';
 
@@ -16,7 +17,7 @@ const create = ({original_url, shorthand}) => {
   validateUrl(original_url);
 
   if (urlShort.findOne({shorthand})) {
-    throw new Error('Short url address is already in use!');
+    throw new HTTPError('Short url address is taken!', 409);
   }
 
   const shortUrl = createShortURLId(shorthand);
@@ -35,7 +36,7 @@ const getUrl = (shorthand) => {
   const {original_url} = urlShort.findOne({shorthand}) || {};
 
   if (!original_url) {
-    throw new Error('Short url not found!');
+    throw new HTTPError('Short url not found!', 404);
   }
 
   return original_url;

@@ -4,7 +4,6 @@
 import express from 'express';
 import {verifyJWTRequest} from './../lib/middleware';
 import {create, getUrl} from './../controllers/UrlShortController';
-import {statusFromMessage} from './../utils/HTTPStatus';
 
 // eslint-disable-next-line new-cap
 const router = express.Router();
@@ -17,8 +16,7 @@ router.get('/*', (req, res) => {
 
     return res.redirect(originalUrl);
   } catch (error) {
-    const {message} = error;
-    const status = statusFromMessage(message);
+    const {message, status} = error;
     res.status(status).json({message});
   }
 });
@@ -36,8 +34,7 @@ router.post('/api/create', (req, res) => {
       shorthand,
     });
   } catch (error) {
-    const {message} = error;
-    const status = statusFromMessage(message);
+    const {message, status} = error;
     res.status(status).json({message});
   }
 });
