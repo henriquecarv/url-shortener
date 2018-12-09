@@ -1,0 +1,36 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "description": "URL Shortener service",
+  "private": true,
+  "main": "src/index.mjs",
+  "scripts": {
+    "local": "nodemon -r dotenv/config --experimental-modules .",
+    "start": "node -r dotenv/config --experimental-modules .",
+    "lint": "eslint . --ext mjs --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "url",
+    "short",
+    "url-shortener"
+  ],
+  "author": "Henrique Carvalho da Cruz <henriquecarv.cruz@gmail.com> (https://henriquecarv.com)",
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
+  "devDependencies": {
+    "dotenv": "^6.2.0",
+    "eslint": "^5.10.0",
+    "eslint-config-google": "^0.11.0",
+    "nodemon": "^1.18.7"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0"
+  }
+}
