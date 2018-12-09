@@ -22,14 +22,15 @@ router.post('/api/create', (req, res) => {
       throw new Error('Provide the request body with a original_url');
     }
 
-    const result = create(req.body);
+    const shorthand = create(req.body);
 
     res.status(201).json({
-      ...result,
+      shorthand,
     });
   } catch (error) {
     const {message} = error;
-    res.status(400).json({message});
+    const status = message.search(/use/g) === 0 ? 409 : 400;
+    res.status(status).json({message});
   }
 });
 
