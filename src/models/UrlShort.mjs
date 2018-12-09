@@ -1,4 +1,5 @@
 /* eslint-disable camelcase */
+'use strict';
 
 /**
  * UrlShort Model
