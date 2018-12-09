@@ -1,22 +1,14 @@
 'use strict';
 
 import express from 'express';
-import {verifyJWTRequest} from './middleware.mjs';
-
-// eslint-disable-next-line new-cap
-const router = express.Router();
-
-router.all('*', verifyJWTRequest);
-
-router.get('/', (req, res) => {
-  res.status(200).json({
-    success: true,
-    data: 'Authorized!',
-  });
-});
+import bodyParser from 'body-parser';
+import router from './routes/UrlShortRoute';
 
 const app = express();
 const port = 3000;
+
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 app.use(router);
 
 app.listen(port, () =>

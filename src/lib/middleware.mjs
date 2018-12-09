@@ -1,6 +1,6 @@
 'use strict';
 
-import {verifyJWT} from './lib/auth.mjs';
+import {verifyJWT} from './auth';
 
 const verifyJWTRequest = async (req, res, next) => {
   try {
