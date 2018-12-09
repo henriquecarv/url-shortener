@@ -7,7 +7,8 @@
   "scripts": {
     "local": "nodemon .",
     "start": "node .",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "mocha -G --timeout 10000 --require test/init.js test/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -29,7 +30,8 @@
     "eslint-config-google": "^0.11.0",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.7",
-    "should": "^13.2.3"
+    "should": "^13.2.3",
+    "supertest": "^3.3.0"
   },
   "dependencies": {
     "body-parser": "^1.18.3",

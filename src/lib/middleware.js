@@ -17,7 +17,7 @@ const verifyJWTRequest = async (req, res, next) => {
     next();
   } catch (error) {
     const message = 'Invalid auth token provided';
-    res.status(400).json({message});
+    res.status(401).json({message});
   }
 };
 
