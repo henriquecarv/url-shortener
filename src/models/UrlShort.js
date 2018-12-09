@@ -16,4 +16,4 @@ class UrlShort {
   }
 }
 
-export default UrlShort;
+module.exports = UrlShort;

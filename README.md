@@ -8,15 +8,11 @@ URL Shortener service
 
 ## Installing
 
-- To be filled
+- npm install
 
 ## Testing
 
-- To be filled
-
-## Usage
-
-- To be filled
+- npm test
 
 ### License
 

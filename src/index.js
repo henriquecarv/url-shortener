@@ -1,8 +1,8 @@
 'use strict';
 
-import express from 'express';
-import bodyParser from 'body-parser';
-import router from './routes/UrlShortRoute';
+const express = require('express');
+const bodyParser = require('body-parser');
+const router = require('./routes/UrlShortRoute');
 
 const app = express();
 const port = 3000;
@@ -15,5 +15,3 @@ app.listen(port, () =>
   // eslint-disable-next-line no-console
   console.info(`url-shortener listening on http://127.0.0.1:${port}/`)
 );
-
-export default router;

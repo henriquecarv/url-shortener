@@ -1,9 +1,9 @@
 /* eslint-disable camelcase */
 'use strict';
 
-import express from 'express';
-import {verifyJWTRequest} from './../lib/middleware';
-import {create, getUrl} from './../controllers/UrlShortController';
+const express = require('express');
+const verifyJWTRequest = require('./../lib/middleware');
+const {create, getUrl} = require('./../controllers/UrlShortController');
 
 // eslint-disable-next-line new-cap
 const router = express.Router();
@@ -39,4 +39,4 @@ router.post('/api/create', (req, res) => {
   }
 });
 
-export default router;
+module.exports = router;

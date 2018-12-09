@@ -1,6 +1,6 @@
 'use strict';
 
-import {verifyJWT} from './auth';
+const verifyJWT = require('./auth');
 
 /**
  * Verify if the request header has the correct authentication
@@ -21,4 +21,4 @@ const verifyJWTRequest = async (req, res, next) => {
   }
 };
 
-export {verifyJWTRequest};
+module.exports = verifyJWTRequest;

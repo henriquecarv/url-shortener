@@ -15,4 +15,4 @@ class HTTPError {
   }
 }
 
-export default HTTPError;
+module.exports = HTTPError;

@@ -1,10 +1,10 @@
 /* eslint-disable camelcase */
 'use strict';
 
-import UrlShort from './../models/UrlShort';
-import HTTPError from './../models/Error';
-import {createShortURLId, validateUrl} from './../utils/UrlShortHelper';
-import {db} from './../db/init';
+const UrlShort = require('../models/UrlShort');
+const HTTPError = require('../models/Error');
+const {createShortURLId, validateUrl} = require('../utils/UrlShortHelper');
+const db = require('../db/init');
 
 const urlShort = db.addCollection('urlShort');
 
@@ -42,4 +42,4 @@ const getUrl = (shorthand) => {
   return original_url;
 };
 
-export {create, getUrl};
+module.exports = {create, getUrl};

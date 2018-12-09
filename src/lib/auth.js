@@ -1,6 +1,6 @@
 'use strict';
 
-import jwt from 'jsonwebtoken';
+const jwt = require('jsonwebtoken');
 
 /**
  * Verify JWT Authorization key provided with JWT_SECRET
@@ -19,4 +19,4 @@ const verifyJWT = (token) => {
   });
 };
 
-export {verifyJWT};
+module.exports = verifyJWT;

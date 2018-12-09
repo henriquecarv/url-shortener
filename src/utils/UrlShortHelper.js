@@ -1,8 +1,8 @@
 'use strict';
 
-import validUrl from 'valid-url';
-import shortid from 'shortid';
-import HTTPError from '../models/Error.mjs';
+const validUrl = require('valid-url');
+const shortid = require('shortid');
+const HTTPError = require('./../models/Error');
 
 /**
  * Validate a url address
@@ -27,4 +27,7 @@ const createShortURLId = (shorthand) => {
   return shorthand;
 };
 
-export {createShortURLId, validateUrl};
+module.exports = {
+  createShortURLId,
+  validateUrl,
+};
