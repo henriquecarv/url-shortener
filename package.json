@@ -8,7 +8,8 @@
     "local": "nodemon .",
     "start": "node .",
     "lint": "eslint .",
-    "test": "mocha -G --timeout 10000 --require test/init.js test/*.test.js"
+    "mocha": "mocha -G --timeout 10000 --require test/init.js test/*.test.js",
+    "test": "run-p start mocha"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
     "eslint-config-google": "^0.11.0",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.7",
+    "npm-run-all": "^4.1.5",
     "should": "^13.2.3",
     "supertest": "^3.3.0"
   },
