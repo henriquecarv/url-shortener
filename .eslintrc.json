@@ -2,10 +2,7 @@
   "extends": ["eslint:recommended", "google"],
   "parserOptions": {
     "sourceType": "module",
-    "ecmaVersion": 8,
-    "ecmaFeatures": {
-      "experimentalObjectRestSpread": true
-    }
+    "ecmaVersion": 8
   },
   "env": { "es6": true, "node": true, "browser": true }
 }
