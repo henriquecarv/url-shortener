@@ -8,8 +8,6 @@ import {create} from './../controllers/UrlShortController';
 // eslint-disable-next-line new-cap
 const router = express.Router();
 
-router.all('*', verifyJWTRequest);
-
 router.get('/', (req, res) => {
   return res.status(200).json({
     success: true,
@@ -17,6 +15,7 @@ router.get('/', (req, res) => {
   });
 });
 
+router.post('/api/create', verifyJWTRequest);
 router.post('/api/create', (req, res) => {
   try {
     if (!req.body) {

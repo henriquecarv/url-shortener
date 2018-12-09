@@ -13,7 +13,7 @@ app.use(router);
 
 app.listen(port, () =>
   // eslint-disable-next-line no-console
-  console.info(`url-shortener listening on port ${port}!`)
+  console.info(`url-shortener listening on http://127.0.0.1:${port}/`)
 );
 
 export default router;
