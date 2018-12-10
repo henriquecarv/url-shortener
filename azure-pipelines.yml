@@ -19,5 +19,5 @@ steps:
       npm run lint
     displayName: 'Eslint check'
   - script: |
-      timeout 30 npm test
+      npm test & sleep 10 ; kill $!
     displayName: 'Unit test check'
