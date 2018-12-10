@@ -18,3 +18,6 @@ steps:
   - script: |
       npm run lint
     displayName: 'Eslint check'
+  - script: |
+      timeout 30 npm test
+    displayName: 'Unit test check'
