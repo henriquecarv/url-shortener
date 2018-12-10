@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://henriquecarv@github.com/henriquecarv/url-shortener.git"
   },
   "keywords": [
     "url",
@@ -22,6 +22,8 @@
   ],
   "author": "Henrique Carvalho da Cruz <henriquecarv.cruz@gmail.com> (https://henriquecarv.com)",
   "license": "MIT",
+  "homepage": "https://github.com/henriquecarv/url-shortener#readme",
+  "bugs": "https://github.com/henriquecarv/url-shortener/issues",
   "engines": {
     "node": ">=10"
   },
