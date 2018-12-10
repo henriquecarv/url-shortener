@@ -18,3 +18,6 @@ steps:
   - script: |
       npm run lint
     displayName: 'Eslint check'
+  - script: |
+      npm test & sleep 10 ; kill $!
+    displayName: 'Unit test check'
