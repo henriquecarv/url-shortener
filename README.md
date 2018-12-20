@@ -14,6 +14,11 @@ URL Shortener service
 
 - npm install
 
+## Running
+
+- npm start
+- The service will run on <http://127.0.0.1:3000/>
+
 ## Testing
 
 - npm test
