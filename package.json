@@ -28,8 +28,8 @@
 		"node": ">=10"
 	},
 	"devDependencies": {
-		"dotenv": "^8.0.0",
-		"eslint": "^6.2.2",
+		"dotenv": "^8.1.0",
+		"eslint": "^6.2.0",
 		"eslint-config-google": "^0.13.0",
 		"mocha": "^6.2.0",
 		"nodemon": "^1.19.1",
