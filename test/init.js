@@ -1,9 +1,9 @@
-'use strict';
+"use strict";
 
-require('dotenv').config();
+require("dotenv").config();
 
 const PORT = process.env.PORT;
 const ADDRESS = process.env.ADDRESS;
-global.request = require('supertest')(`${ADDRESS}:${PORT}`);
+global.request = require("supertest")(`${ADDRESS}:${PORT}`);
 
-module.exports = require('should');
+module.exports = require("should");

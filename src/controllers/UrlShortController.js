@@ -1,23 +1,23 @@
 /* eslint-disable camelcase */
-'use strict';
+"use strict";
 
-const UrlShort = require('../models/UrlShort');
-const HTTPError = require('../models/Error');
-const {createShortURLId, validateUrl} = require('../utils/UrlShortHelper');
-const db = require('../db/init');
+const UrlShort = require("../models/UrlShort");
+const HTTPError = require("../models/Error");
+const { createShortURLId, validateUrl } = require("../utils/UrlShortHelper");
+const db = require("../db/init");
 
-const urlShort = db.addCollection('urlShort');
+const urlShort = db.addCollection("urlShort");
 
 /**
  * Create a shortURL from original and save to the database
  * @param {Object} {original_url, shorthand} Destructured object
  * @return {String} Short url
  */
-const create = ({original_url, shorthand}) => {
+const create = ({ original_url, shorthand }) => {
   validateUrl(original_url);
 
-  if (urlShort.findOne({shorthand})) {
-    throw new HTTPError('Short url address is taken!', 409);
+  if (urlShort.findOne({ shorthand })) {
+    throw new HTTPError("Short url address is taken!", 409);
   }
 
   const shortUrl = createShortURLId(shorthand);
@@ -32,14 +32,14 @@ const create = ({original_url, shorthand}) => {
  * @param {String} shorthand Short url
  * @return {String} Original Url
  */
-const getUrl = (shorthand) => {
-  const {original_url} = urlShort.findOne({shorthand}) || {};
+const getUrl = shorthand => {
+  const { original_url } = urlShort.findOne({ shorthand }) || {};
 
   if (!original_url) {
-    throw new HTTPError('Short url not found!', 404);
+    throw new HTTPError("Short url not found!", 404);
   }
 
   return original_url;
 };
 
-module.exports = {create, getUrl};
+module.exports = { create, getUrl };

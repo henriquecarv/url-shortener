@@ -1,7 +1,7 @@
 /* eslint-disable new-cap */
-'use strict';
+"use strict";
 
-const loki = require('lokijs');
+const loki = require("lokijs");
 
 const db = new loki();
 

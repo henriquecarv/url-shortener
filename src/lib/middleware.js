@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-const verifyJWT = require('./auth');
+const verifyJWT = require("./auth");
 
 /**
  * Verify if the request header has the correct authentication
@@ -10,14 +10,14 @@ const verifyJWT = require('./auth');
  */
 const verifyJWTRequest = async (req, res, next) => {
   try {
-    const token = req.headers.authorization.replace('Bearer ', '');
+    const token = req.headers.authorization.replace("Bearer ", "");
 
     await verifyJWT(token);
 
     next();
   } catch (error) {
-    const message = 'Invalid auth token provided';
-    res.status(401).json({message});
+    const message = "Invalid auth token provided";
+    res.status(401).json({ message });
   }
 };
 
