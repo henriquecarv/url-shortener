@@ -34,7 +34,7 @@
     "eslint-config-prettier": "^6.5.0",
     "eslint-plugin-prettier": "^3.1.1",
     "mocha": "^6.2.2",
-    "nodemon": "^1.19.4",
+    "nodemon": "^2.0.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.19.1",
     "should": "^13.2.3",
