@@ -31,7 +31,7 @@ router.post("/api/create", (req, res) => {
     const shorthand = create(req.body);
 
     res.status(201).json({
-      shorthand
+      shorthand,
     });
   } catch (error) {
     const { message, status } = error;

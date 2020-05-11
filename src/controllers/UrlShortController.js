@@ -32,7 +32,7 @@ const create = ({ original_url, shorthand }) => {
  * @param {String} shorthand Short url
  * @return {String} Original Url
  */
-const getUrl = shorthand => {
+const getUrl = (shorthand) => {
   const { original_url } = urlShort.findOne({ shorthand }) || {};
 
   if (!original_url) {

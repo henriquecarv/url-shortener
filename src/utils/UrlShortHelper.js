@@ -8,7 +8,7 @@ const HTTPError = require("./../models/Error");
  * Validate a url address
  * @param {String} url The url address
  */
-const validateUrl = url => {
+const validateUrl = (url) => {
   if (!validUrl.isUri(url)) {
     throw new HTTPError("Provide a valid original_url", 400);
   }
@@ -19,7 +19,7 @@ const validateUrl = url => {
  * @param {String} shorthand The short url address
  * @return {String}
  */
-const createShortURLId = shorthand => {
+const createShortURLId = (shorthand) => {
   if (!shorthand) {
     return shortid.generate();
   }
@@ -29,5 +29,5 @@ const createShortURLId = shorthand => {
 
 module.exports = {
   createShortURLId,
-  validateUrl
+  validateUrl,
 };

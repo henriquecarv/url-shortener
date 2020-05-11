@@ -7,7 +7,7 @@ const jwt = require("jsonwebtoken");
  * @param {String} token Authorization Key value
  * @return {Promise}
  */
-const verifyJWT = token => {
+const verifyJWT = (token) => {
   return new Promise((resolve, reject) => {
     jwt.verify(token, process.env.JWT_SECRET, (error, decodedToken) => {
       if (error || !decodedToken) {
