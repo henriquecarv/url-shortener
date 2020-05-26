@@ -1,4 +1,4 @@
-# url-shotener
+# url-shortener
 
 URL Shortener service
 
